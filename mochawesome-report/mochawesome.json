@@ -1,0 +1,432 @@
+{
+  "stats": {
+    "suites": 9,
+    "tests": 9,
+    "passes": 4,
+    "pending": 0,
+    "failures": 5,
+    "start": "2022-03-16T14:46:43.241Z",
+    "end": "2022-03-16T15:00:11.196Z",
+    "duration": 807955,
+    "testsRegistered": 9,
+    "passPercent": 44.44444444444444,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "b8a00461-cc77-4a1d-8c1b-d4e6e976e800",
+      "title": "",
+      "fullFile": "",
+      "file": "",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "a7c0e4ca-870c-4980-b531-206a52eb5eb9",
+          "title": "Check the add user page functionality.",
+          "fullFile": "C:\\Users\\bvasi\\Desktop\\test-offices\\test\\addingNewUserTestPhysical.js",
+          "file": "\\test\\addingNewUserTestPhysical.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "successfully adds a new user",
+              "fullTitle": "Check the add user page functionality. successfully adds a new user",
+              "timedOut": null,
+              "duration": 100012,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "//launc the browaser\nlet driver = await new Builder().forBrowser(\"firefox\").build();\n//navigate to our application\nawait driver.get(\"http://offices-frontend.herokuapp.com/users\");\nawait driver.findElement(By.id(\"add-button\")).click();\n//finds the title\nlet actualTitle = await driver.getTitle();\n//assertion\nactualTitle.should.equal(\"Offices | Add New User\");\n//adds the first name of the new user we want to create\nawait driver.findElement(By.id(\"first-name\")).sendKeys(\"Ion\");\n//adds the last name of the new user we want to create\nawait driver.findElement(By.id(\"last-name\")).sendKeys(\"Creanga\");\n// adds the emali address\nawait driver.findElement(By.id(\"email\")).sendKeys(\"email@offices.com\");\n// adds the password\nawait driver.findElement(By.id(\"password\")).sendKeys(\"password\");\n// adds the gender\nawait driver.findElement(By.id(\"gender\")).sendKeys(\"Male\");\n// adds the nationality\nawait driver.findElement(By.id(\"nationality\")).sendKeys(\"Romanian\");\n// adds the Building name\n// await driver.findElement(By.id(\"building\")).sendKeys(\"B1\");\n// adds the Office name\nawait driver.findElement(By.id(\"office\")).sendKeys(\"JSD\");\n// adds the Role\nawait driver.findElement(By.id(\"role\")).sendKeys(\"Sefu' la bani\");\n// adds the birth date\nawait driver\n  .findElement(\n    By.xpath(\"/html/body/div/div/div[2]/div[2]/div/div[5]/div[1]/input\")\n  )\n  .sendKeys(\"02152002\");\n// picks up the work model\nawait driver.findElement(By.id(\"physical-button\")).click();\n// creates the user by hitting save\nawait driver.findElement(By.id(\"save-button\")).click();\n//obtains the title of the page the admin is landing to after he adds a user\nlet newTitle = await driver.getTitle();\n//condition to be met\nnewTitle.should.equal(\"Offices | Users\");\n//close the browser\nawait driver.quit();",
+              "err": {
+                "message": "Error: Timeout of 100000ms exceeded. For async tests and hooks, ensure \"done()\" is called; if returning a Promise, ensure it resolves. (C:\\Users\\bvasi\\Desktop\\test-offices\\test\\addingNewUserTestPhysical.js)",
+                "estack": "Error: Timeout of 100000ms exceeded. For async tests and hooks, ensure \"done()\" is called; if returning a Promise, ensure it resolves. (C:\\Users\\bvasi\\Desktop\\test-offices\\test\\addingNewUserTestPhysical.js)\n    at listOnTimeout (node:internal/timers:559:17)\n    at processTimers (node:internal/timers:502:7)",
+                "diff": null
+              },
+              "uuid": "f099a574-0df4-4ccc-a95e-6b1c4b5d8f17",
+              "parentUUID": null,
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "f099a574-0df4-4ccc-a95e-6b1c4b5d8f17"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 100012,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": null
+        },
+        {
+          "uuid": "b696f1d0-c4df-4fa8-a965-144116dad533",
+          "title": "Navigate the page by click-ing on the button menu.",
+          "fullFile": "C:\\Users\\bvasi\\Desktop\\test-offices\\test\\buttonstest01.js",
+          "file": "\\test\\buttonstest01.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "verifies the 'Buildings' button ",
+              "fullTitle": "Navigate the page by click-ing on the button menu. verifies the 'Buildings' button ",
+              "timedOut": null,
+              "duration": 100014,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "//launch the browaser\nlet driver = await new Builder().forBrowser(\"firefox\").build();\n//navigate to our application\nawait driver.get(\"http://offices-frontend.herokuapp.com/users\");\n//clicks the button\nawait driver.findElement(By.id(\"buildings-button\")).click();\n//finds the title\nlet actualTitle = await driver.getTitle();\nactualTitle.should.equal(\"Offices | Buildings\");\n//close the browser\nawait driver.quit();",
+              "err": {
+                "message": "Error: Timeout of 100000ms exceeded. For async tests and hooks, ensure \"done()\" is called; if returning a Promise, ensure it resolves. (C:\\Users\\bvasi\\Desktop\\test-offices\\test\\buttonstest01.js)",
+                "estack": "Error: Timeout of 100000ms exceeded. For async tests and hooks, ensure \"done()\" is called; if returning a Promise, ensure it resolves. (C:\\Users\\bvasi\\Desktop\\test-offices\\test\\buttonstest01.js)\n    at listOnTimeout (node:internal/timers:559:17)\n    at processTimers (node:internal/timers:502:7)",
+                "diff": null
+              },
+              "uuid": "6ef5c4b0-b8e2-4f57-a9eb-401153a49de7",
+              "parentUUID": null,
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "6ef5c4b0-b8e2-4f57-a9eb-401153a49de7"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 100014,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": null
+        },
+        {
+          "uuid": "e7121526-3ade-4fab-8330-7bd3fb83c3a3",
+          "title": "Navigate the site by click-ing the 'Offices'button",
+          "fullFile": "C:\\Users\\bvasi\\Desktop\\test-offices\\test\\buttonstest02.js",
+          "file": "\\test\\buttonstest02.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "verifies the 'Offices' button",
+              "fullTitle": "Navigate the site by click-ing the 'Offices'button verifies the 'Offices' button",
+              "timedOut": null,
+              "duration": 78194,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "//launch the browaser\nlet driver = await new Builder().forBrowser(\"firefox\").build();\n//navigate to our application\nawait driver.get(\"http://offices-frontend.herokuapp.com/users\");\nawait driver.findElement(By.id(\"offices-button\")).click();\n//finds the title\nlet actualTitle = await driver.getTitle();\nactualTitle.should.equal(\"Offices | Offices\");\n//close the browser\nawait driver.quit();",
+              "err": {},
+              "uuid": "87ba4526-073f-4e72-ba17-8e2809e7a45d",
+              "parentUUID": null,
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "87ba4526-073f-4e72-ba17-8e2809e7a45d"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 78194,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": null
+        },
+        {
+          "uuid": "e483360b-de7e-4b37-9a41-bf72022dc67c",
+          "title": "Navigate the site by click-ing the 'Requests'button",
+          "fullFile": "C:\\Users\\bvasi\\Desktop\\test-offices\\test\\buttonstest03.js",
+          "file": "\\test\\buttonstest03.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "verifies the 'Requests' button",
+              "fullTitle": "Navigate the site by click-ing the 'Requests'button verifies the 'Requests' button",
+              "timedOut": null,
+              "duration": 100020,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "//launch the browaser\nlet driver = await new Builder().forBrowser(\"firefox\").build();\n//navigate to our application\nawait driver.get(\"http://offices-frontend.herokuapp.com/users\");\nawait driver.findElement(By.id(\"requests-button\")).click();\n//finds the title\nlet actualTitle = await driver.getTitle();\nactualTitle.should.equal(\"Offices | Requests\");\n//close the browser\nawait driver.quit();",
+              "err": {
+                "message": "Error: Timeout of 100000ms exceeded. For async tests and hooks, ensure \"done()\" is called; if returning a Promise, ensure it resolves. (C:\\Users\\bvasi\\Desktop\\test-offices\\test\\buttonstest03.js)",
+                "estack": "Error: Timeout of 100000ms exceeded. For async tests and hooks, ensure \"done()\" is called; if returning a Promise, ensure it resolves. (C:\\Users\\bvasi\\Desktop\\test-offices\\test\\buttonstest03.js)\n    at listOnTimeout (node:internal/timers:559:17)\n    at processTimers (node:internal/timers:502:7)",
+                "diff": null
+              },
+              "uuid": "3bded243-dca7-4415-ad31-c05aac9b7337",
+              "parentUUID": null,
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "3bded243-dca7-4415-ad31-c05aac9b7337"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 100020,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": null
+        },
+        {
+          "uuid": "74b2c441-486d-44f9-a150-84fb5b25aa41",
+          "title": "Navigate the site by click-ing the 'Users'button",
+          "fullFile": "C:\\Users\\bvasi\\Desktop\\test-offices\\test\\buttonstest04.js",
+          "file": "\\test\\buttonstest04.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "verifies the 'Users' button",
+              "fullTitle": "Navigate the site by click-ing the 'Users'button verifies the 'Users' button",
+              "timedOut": null,
+              "duration": 91556,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "//launch the browaser\nlet driver = await new Builder().forBrowser(\"firefox\").build();\n//navigate to our application\nawait driver.get(\"http://offices-frontend.herokuapp.com/users\");\nawait driver.findElement(By.id(\"users-button\")).click();\n//finds the title\nlet actualTitle = await driver.getTitle();\nactualTitle.should.equal(\"Offices | Users\");\n//close the browser\nawait driver.quit();",
+              "err": {},
+              "uuid": "bf1a4a69-8a7a-40ec-89b5-06008da44afa",
+              "parentUUID": null,
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "bf1a4a69-8a7a-40ec-89b5-06008da44afa"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 91556,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": null
+        },
+        {
+          "uuid": "25bad77b-a5c3-47a5-bed9-e6463b4dc68e",
+          "title": "Navigate the site by click-ing the 'Logout' button",
+          "fullFile": "C:\\Users\\bvasi\\Desktop\\test-offices\\test\\buttonstest05.js",
+          "file": "\\test\\buttonstest05.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "verifies the 'Logout' button",
+              "fullTitle": "Navigate the site by click-ing the 'Logout' button verifies the 'Logout' button",
+              "timedOut": null,
+              "duration": 86573,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "//launch the browaser\nlet driver = await new Builder().forBrowser(\"firefox\").build();\n//navigate to our application\nawait driver.get(\"http://offices-frontend.herokuapp.com/users\");\nawait driver.findElement(By.id(\"logout-button\")).click();\n//finds the title\nlet actualTitle = await driver.getTitle();\nactualTitle.should.equal(\"Offices | Login\");\n//close the browser\nawait driver.quit();",
+              "err": {},
+              "uuid": "0936594d-157b-4535-84e9-23f28ae2a775",
+              "parentUUID": null,
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "0936594d-157b-4535-84e9-23f28ae2a775"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 86573,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": null
+        },
+        {
+          "uuid": "27999128-8063-4339-a3d0-2d2336039ea0",
+          "title": "Check login results entering valid email address & password.",
+          "fullFile": "C:\\Users\\bvasi\\Desktop\\test-offices\\test\\logintest01.js",
+          "file": "\\test\\logintest01.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "successfully adds an email and a password",
+              "fullTitle": "Check login results entering valid email address & password. successfully adds an email and a password",
+              "timedOut": null,
+              "duration": 100015,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "//launc the browaser\nlet driver = await new Builder().forBrowser(\"firefox\").build();\n//navigate to our application\nawait driver.get(\"http://offices-frontend.herokuapp.com/login\");\n//adds an email adress\nawait driver.findElement(By.id(\"email\")).sendKeys(\"admin@1234.com\");\n//adds a password\nawait driver.findElement(By.id(\"password\")).sendKeys(\"admin1234\");\n//clicks the buttom\nawait driver.findElement(By.className(\"sc-jrQzAO eHLVvH\")).click();\n//finds the title\nconst actualTitle = await driver.getTitle();\nactualTitle.should.equal(\"Offices | Users\");\n//close the browser\nawait driver.quit();",
+              "err": {
+                "message": "Error: Timeout of 100000ms exceeded. For async tests and hooks, ensure \"done()\" is called; if returning a Promise, ensure it resolves. (C:\\Users\\bvasi\\Desktop\\test-offices\\test\\logintest01.js)",
+                "estack": "Error: Timeout of 100000ms exceeded. For async tests and hooks, ensure \"done()\" is called; if returning a Promise, ensure it resolves. (C:\\Users\\bvasi\\Desktop\\test-offices\\test\\logintest01.js)\n    at listOnTimeout (node:internal/timers:559:17)\n    at processTimers (node:internal/timers:502:7)",
+                "diff": null
+              },
+              "uuid": "574afcf5-c227-420a-b6b6-d2bce46bc3d5",
+              "parentUUID": null,
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "574afcf5-c227-420a-b6b6-d2bce46bc3d5"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 100015,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": null
+        },
+        {
+          "uuid": "a4b4d1bc-3cf7-4cbb-b5f9-d8c486d258a2",
+          "title": "Check login results entering invalid email address & password.",
+          "fullFile": "C:\\Users\\bvasi\\Desktop\\test-offices\\test\\logintest02.js",
+          "file": "\\test\\logintest02.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "successfully adds invalid email and password",
+              "fullTitle": "Check login results entering invalid email address & password. successfully adds invalid email and password",
+              "timedOut": null,
+              "duration": 100018,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "//launc the browaser\nlet driver = await new Builder().forBrowser(\"firefox\").build();\n//navigate to our application\nawait driver.get(\"http://offices-frontend.herokuapp.com/login\");\n//adds an email adress\nawait driver\n  .findElement(By.id(\"email\"))\n  .sendKeys(\"notworkingemail@offices.com\");\n//adds a password\nawait driver.findElement(By.id(\"password\")).sendKeys(\"notpass\");\n//clicks the buttom\nawait driver.findElement(By.className(\"sc-jrQzAO eHLVvH\")).click();\n//finds the title\nconst actualTitle = await driver.getTitle();\nactualTitle.should.equal(\"Offices | Login\");\n//close the browser\nawait driver.quit();",
+              "err": {
+                "message": "Error: Timeout of 100000ms exceeded. For async tests and hooks, ensure \"done()\" is called; if returning a Promise, ensure it resolves. (C:\\Users\\bvasi\\Desktop\\test-offices\\test\\logintest02.js)",
+                "estack": "Error: Timeout of 100000ms exceeded. For async tests and hooks, ensure \"done()\" is called; if returning a Promise, ensure it resolves. (C:\\Users\\bvasi\\Desktop\\test-offices\\test\\logintest02.js)\n    at listOnTimeout (node:internal/timers:559:17)\n    at processTimers (node:internal/timers:502:7)",
+                "diff": null
+              },
+              "uuid": "1bab997e-4ce6-4545-b760-b90501cddab5",
+              "parentUUID": null,
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "1bab997e-4ce6-4545-b760-b90501cddab5"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 100018,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": null
+        },
+        {
+          "uuid": "b6997ca5-b239-465c-9544-396d07c08736",
+          "title": "Check login results entering empty email address & password.",
+          "fullFile": "C:\\Users\\bvasi\\Desktop\\test-offices\\test\\logintest03.js",
+          "file": "\\test\\logintest03.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "successfully adds blank email and password",
+              "fullTitle": "Check login results entering empty email address & password. successfully adds blank email and password",
+              "timedOut": null,
+              "duration": 50415,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "//launc the browaser\nlet driver = await new Builder().forBrowser(\"firefox\").build();\n//navigate to our application\nawait driver.get(\"http://offices-frontend.herokuapp.com/login\");\n//adds an email adress\nawait driver.findElement(By.id(\"email\")).sendKeys(\"\");\n//adds a password\nawait driver.findElement(By.id(\"password\")).sendKeys(\"\");\n//clicks the buttom\nawait driver.findElement(By.className(\"sc-jrQzAO eHLVvH\")).click();\n//finds the title\nconst actualTitle = await driver.getTitle();\nactualTitle.should.equal(\"Offices | Login\");\n//close the browser\nawait driver.quit();",
+              "err": {},
+              "uuid": "5c5a3025-30b2-46f6-aba1-ac92f228dba3",
+              "parentUUID": null,
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "5c5a3025-30b2-46f6-aba1-ac92f228dba3"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 50415,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": null
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 100000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "9.2.2"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.2"
+    },
+    "marge": {
+      "options": null,
+      "version": "6.1.1"
+    }
+  }
+}

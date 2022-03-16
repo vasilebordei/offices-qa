@@ -1,0 +1,15 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1647202641337' stop='1647202641338'>
+    <name>Check login results entering valid email address &amp; password.</name>
+    <title>Check login results entering valid email address &amp; password.</title>
+    <test-cases>
+        <test-case start='1647202641337' status='passed' stop='1647202641338'>
+            <name>successfully adds an email and a password</name>
+            <title>successfully adds an email and a password</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>

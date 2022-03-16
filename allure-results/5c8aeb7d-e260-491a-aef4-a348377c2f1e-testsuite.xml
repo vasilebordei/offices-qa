@@ -1,0 +1,15 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1647202490364' stop='1647202490366'>
+    <name>Navigate the page by click-ing on the button menu.</name>
+    <title>Navigate the page by click-ing on the button menu.</title>
+    <test-cases>
+        <test-case start='1647202490364' status='passed' stop='1647202490366'>
+            <name>verifies the 'Buildings' button </name>
+            <title>verifies the 'Buildings' button </title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>

@@ -1,0 +1,21 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1647202670085' stop='1647202670086'>
+    <name>Check login results entering invalid email address &amp; password.</name>
+    <title>Check login results entering invalid email address &amp; password.</title>
+    <test-cases>
+        <test-case start='1647202670085' status='broken' stop='1647202670086'>
+            <name>successfully adds invalid email and password</name>
+            <title>successfully adds invalid email and password</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+            <failure>
+                <message>expected 'Offices | Users' to equal 'Offices | Login'</message>
+                <stack-trace>AssertionError: expected 'Offices | Users' to equal 'Offices | Login'
+                    at Context.&lt;anonymous> (test\logintest02.js:28:24)
+                    at processTicksAndRejections (node:internal/process/task_queues:96:5)</stack-trace>
+            </failure>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>
